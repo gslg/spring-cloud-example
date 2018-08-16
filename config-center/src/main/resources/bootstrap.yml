@@ -1,0 +1,45 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native #native是本地配置
+  cloud:
+    #服务发现
+    consul:
+      host:  ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        prefer-ip-address: true
+
+management:
+  info:
+    git:
+      mode: full
+
+#环境配置
+---
+#本地配置
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+      fail-fast: true
+
+---
+#dev环境配置
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gslg/spring-cloud-config   # 配置git仓库地址
+          search-paths:         # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                                      # git仓库的账号
+          password:                                     # git仓库的密码

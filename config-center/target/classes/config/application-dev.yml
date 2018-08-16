@@ -1,0 +1,10 @@
+server:
+  tomcat:
+    max-threads: 500 # Maximum amount of worker threads.
+    min-spare-threads: 50 # Minimum amount of worker threads
+
+#\u76D1\u63A7\u77ED\u70B9\u914D\u7F6E
+management:
+  info:
+    git:
+      mode: full
