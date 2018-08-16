@@ -8,6 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
 		<module>config-center</module>
+		<module>common-api</module>
+		<module>message-service</module>
+		<module>common-mybatis-helper</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -28,6 +31,7 @@
 		<spring.cloud.dependeces.version>Finchley.SR1</spring.cloud.dependeces.version>
 		<docker.image.prefix>cloud</docker.image.prefix>
 		<docker.plugin.version>1.1.1</docker.plugin.version>
+		<lombok.version>1.16.20</lombok.version>
 	</properties>
 
 	<dependencyManagement>
@@ -45,6 +49,13 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>compile</scope>
 			</dependency>
 
 			<dependency>

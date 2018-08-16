@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.lg.mybatis.helper.spring.boot.autoconfigure.config.mapper.MapperConfiguration,\
+com.lg.mybatis.helper.spring.boot.autoconfigure.config.pagehelper.PageHelperAutoConfiguration
